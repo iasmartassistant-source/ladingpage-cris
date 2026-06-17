@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#6B9D5C">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#6B9D5C"/>
+    <circle cx="600" cy="250" r="80" fill="#ffffff" opacity="0.9"/>
+    <text x="600" y="500" font-family="serif" font-size="64" font-weight="bold" text-anchor="middle" fill="#ffffff">Cristiane Souza</text>
+    <text x="600" y="560" font-family="sans-serif" font-size="32" text-anchor="middle" fill="#ffffff" opacity="0.9">Psicóloga Clínica</text>
+  </svg>
+</template>
+
+<helmet>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cristiane Souza - Psicóloga Clínica - TCC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #2d3436; background: #ffffff; line-height: 1.6; }
+    
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+    }
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+    
+    /* Header / Nav */
+    header {
+      background: #ffffff;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #6B9D5C;
+      letter-spacing: -0.5px;
+    }
+    nav {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2d3436;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover { color: #6B9D5C; }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: #6B9D5C;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #5a8a4e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(42, 155, 141, 0.3);
+    }
+    
+    /* Hero Banner Section */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(107, 157, 92, 0.85) 0%, rgba(107, 157, 92, 0.75) 100%);
+      padding: 0;
+      margin-top: -20px;
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="1200" height="600" fill="url(%23dots)"/></svg>');
+      opacity: 0.3;
+    }
+    .hero-banner .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      color: white;
+      margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .hero-content p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .hero-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 3;
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Specialties Section */
+    .specialties {
+      padding: 60px 20px;
+      background: #ffffff;
+    }
+    .specialties .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      color: #6B9D5C;
+      margin-bottom: 50px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .specialties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .specialty-card {
+      background: linear-gradient(135deg, #C8E6A0 0%, #C8E6A0 100%);
+      border: 2px solid #b8daa0;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .specialty-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #6B9D5C, #6B9D5C);
+      border-radius: 12px 12px 0 0;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .specialty-card:hover::before {
+      transform: scaleX(1);
+    }
+    .specialty-card:hover {
+      border-color: #6B9D5C;
+      box-shadow: 0 12px 32px rgba(107, 157, 92, 0.12);
+      transform: translateY(-4px);
+    }
+    .specialty-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .specialty-card h3 {
+      font-size: 18px;
+      color: #6B9D5C;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .specialty-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* About Section */
+    .about {
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #C8E6A0 0%, #C8E6A0 100%);
+    }
+    .about .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(107, 157, 92, 0.15);
+      border: 4px solid #6B9D5C;
+    }
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .about-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #6B9D5C;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    .about-content p {
+      font-size: 16px;
+      color: #4a5568;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    .expertise {
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 2px solid #b8daa0;
+    }
+    .expertise h3 {
+      font-size: 16px;
+      color: #6B9D5C;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .expertise-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .expertise-item {
+      font-size: 14px;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .expertise-item svg {
+      color: #6B9D5C;
+    }
+    
+    /* Reasons Section */
+    .reasons {
+      padding: 60px 20px;
+      background: #ffffff;
+    }
+    .reasons .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .reasons-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #6B9D5C;
+      margin-bottom: 32px;
+      font-weight: 700;
+    }
+    .reasons-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .reason-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 12px 0;
+    }
+    .reason-item svg {
+      width: 24px;
+      height: 24px;
+      color: #6B9D5C;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .reason-item p {
+      font-size: 16px;
+      color: #2d3436;
+      font-weight: 500;
+    }
+    .reasons-image {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    }
+    .reasons-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      padding: 60px 20px;
+      background: #ffffff;
+    }
+    .testimonials .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .carousel-outer {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #C8E6A0;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      padding: 40px 20px;
+      animation: marqueeScroll 20s linear infinite;
+    }
+    .testimonial-card {
+      flex: 0 0 calc(33.333% - 16px);
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #e8e8e8;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .testimonial-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2d3436;
+    }
+    .testimonial-highlight {
+      color: #6B9D5C;
+      font-weight: 700;
+    }
+    .testimonial-text {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testimonial-rating {
+      display: flex;
+      gap: 4px;
+      font-size: 16px;
+    }
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-33.333%); }
+    }
+    
+    /* Calendar Modal */
+    .calendar-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .calendar-modal.active {
+      display: flex;
+    }
+    .calendar-content {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    .calendar-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: #6B9D5C;
+      margin: 0;
+    }
+    .calendar-close {
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #999;
+      cursor: pointer;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+    }
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .day-column {
+      text-align: center;
+    }
+    .day-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #2d3436;
+      margin-bottom: 8px;
+    }
+    .day-date {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 12px;
+    }
+    .time-slot {
+      background: #C8E6A0;
+      border: 2px solid #b8daa0;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #6B9D5C;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .time-slot:hover {
+      background: #6B9D5C;
+      color: white;
+      transform: translateY(-2px);
+    }
+    .time-slot.unavailable {
+      background: #f5f5f5;
+      border-color: #e0e0e0;
+      color: #999;
+      cursor: not-allowed;
+    }
+    .time-slot.unavailable:hover {
+      background: #f5f5f5;
+      color: #999;
+      transform: none;
+    }
+    .calendar-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+    .btn-cancel {
+      background: #f0f0f0;
+      color: #666;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-cancel:hover {
+      background: #e0e0e0;
+    }
+    
+    /* Map Section */
+    .map-section {
+      padding: 60px 20px;
+      background: #ffffff;
+    }
+    .map-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .map-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .map-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #6B9D5C;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    .map-info p {
+      font-size: 16px;
+      color: #4a5568;
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .map-embed {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(42, 155, 141, 0.15);
+      height: 400px;
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 60px 20px;
+      background: #6B9D5C;
+      text-align: center;
+      color: white;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .cta-section p {
+      font-size: 18px;
+      margin-bottom: 32px;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons-white {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-white {
+      background: white;
+      color: #6B9D5C;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: #ffffff;
+      padding: 40px 20px;
+    }
+    footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    footer h3 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: #6B9D5C;
+      font-weight: 600;
+    }
+    footer p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #cccccc;
+    }
+    footer a {
+      color: #6B9D5C;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #6B9D5C;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      header .container { flex-direction: column; gap: 20px; }
+      nav { gap: 20px; flex-direction: column; }
+      .hero-banner .container { grid-template-columns: 1fr; gap: 40px; }
+      .hero-content h1 { font-size: 36px; }
+      .hero-content p { font-size: 16px; }
+      .section-title { font-size: 28px; }
+      .reasons .container,
+      .about .container,
+      .map-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-content, .reasons-content { order: 2; }
+      .about-image, .reasons-image { order: 1; }
+      .cta-section h2 { font-size: 28px; }
+      .testimonial-card { flex: 0 0 calc(50% - 12px); }
+      @keyframes marqueeScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+      }
+    }
+  </style>
+</helmet>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/5531997870726" class="whatsapp-float" title="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.006a9.87 9.87 0 00-4.869 1.171l-.346.202-3.582.662.676-3.522.235-.374a9.86 9.86 0 011.469-2.306c2.26-2.26 5.324-3.374 8.561-3.066 3.238.307 6.213 1.86 8.302 4.354 2.089 2.494 2.986 5.866 2.5 9.18-.486 3.314-2.584 6.236-5.508 7.993-2.924 1.756-6.606 2.605-10.25 2.193"/>
+  </svg>
+</a>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="logo">Cristiane Souza</div>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="cta-buttons">
+      <button class="btn btn-primary" onclick="openCalendar()">Agendar</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Banner -->
+<section class="hero-banner">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Terapia que Transforma Vidas</h1>
+      <p>Especialista em Terapia Cognitivo-Comportamental (TCC). Um espaço acolhedor onde você é compreendido, respeitado e guiado para transformações profundas e significativas.</p>
+      <button class="btn btn-primary btn-lg" onclick="openCalendar()" style="padding: 14px 32px; font-size: 16px;">Agendar Primeira Consulta</button>
+    </div>
+    <div class="hero-image">
+      <img src="uploads/IMG_6781-9b226f9f.jpg" alt="Cristiane Souza - Psicóloga" style="max-width: 100%; height: auto;">
+    </div>
+  </div>
+</section>
+
+<!-- Specialties Section -->
+<section class="specialties" id="especialidades">
+  <div class="container">
+    <h2 class="section-title">Minhas Especialidades</h2>
+    <div class="specialties-grid">
+      <div class="specialty-card">
+        <div class="specialty-icon">🧠</div>
+        <h3>TCC - Terapia Cognitivo-Comportamental</h3>
+        <p>Abordagem científica focada em mudanças de padrões de pensamento e comportamento para resultados mensuráveis.</p>
+      </div>
+      <div class="specialty-card">
+        <div class="specialty-icon">👤</div>
+        <h3>Psicoterapia Individual</h3>
+        <p>Atendimento personalizado para adultos e adolescentes (14+), com objetivos claros e acompanhamento estruturado.</p>
+      </div>
+      <div class="specialty-card">
+        <div class="specialty-icon">👨‍👩‍👧‍👦</div>
+        <h3>Treinamento Parental</h3>
+        <p>Orientação e manejo especializado para pais e cuidadores que desejam compreender e apoiar melhor seus filhos.</p>
+      </div>
+      <div class="specialty-card">
+        <div class="specialty-icon">🧘‍♀️</div>
+        <h3>Ansiedade e Transtornos</h3>
+        <p>Tratamento especializado de ansiedade, fobias, transtornos do humor e outras condições psicológicas.</p>
+      </div>
+      <div class="specialty-card">
+        <div class="specialty-icon">💪</div>
+        <h3>Desenvolvimento Pessoal</h3>
+        <p>Acompanhamento para crescimento pessoal, autoconhecimento e desenvolvimento de habilidades emocionais.</p>
+      </div>
+      <div class="specialty-card">
+        <div class="specialty-icon">❤️</div>
+        <h3>Relacionamentos</h3>
+        <p>Terapia focada na melhoria de relacionamentos amorosos, familiares e sociais com ferramentas práticas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reasons Section -->
+<section class="reasons" id="beneficios">
+  <div class="container">
+    <div class="reasons-content">
+      <h2>5 Motivos para Fazer Terapia</h2>
+      <div class="reasons-list">
+        <div class="reason-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          <p>Autoconhecimento</p>
+        </div>
+        <div class="reason-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          <p>Escuta sem julgamento</p>
+        </div>
+        <div class="reason-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          <p>Superar medos e dificuldades</p>
+        </div>
+        <div class="reason-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          <p>Melhorar os relacionamentos</p>
+        </div>
+        <div class="reason-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          <p>Aprender a lidar com sentimentos e emoções</p>
+        </div>
+      </div>
+    </div>
+    <div class="reasons-image">
+      <img src="uploads/cris-0fa75f79.png" alt="5 motivos para fazer terapia" style="max-width: 100%; height: auto;">
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about-image">
+      <img src="uploads/IMG_6782.jpg" alt="Cristiane Souza - Psicóloga" style="max-width: 100%; height: auto;">
+    </div>
+    <div class="about-content">
+      <h2>Sobre Cristiane</h2>
+      <p>Especialista em Terapia Cognitivo-Comportamental (TCC). Acredito que cada pessoa carrega uma história única, construída por experiências, emoções e desafios que merecem ser compreendidos com respeito.</p>
+      
+      <p>Minha atuação na Psicologia Clínica é guiada por dois pilares fundamentais: a responsabilidade técnica e o compromisso ético. Entendo que buscar terapia é um passo importante, que exige um espaço de sigilo, seriedade e segurança.</p>
+      
+      <p>Acredito que a melhor entrega terapêutica nasce do estudo contínuo. Por isso me especializei em Terapia Cognitivo-Comportamental (TCC), Psicopatologia e Gestão em Pessoas. Essa bagagem técnica me permite aplicar a Prática Baseada em Evidências com o rigor necessário.</p>
+      
+      <div class="expertise">
+        <h3>Formação & Experiência</h3>
+        <div class="expertise-list">
+          <div class="expertise-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Graduação em Psicologia
+          </div>
+          <div class="expertise-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Especialista em TCC - Terapia Cognitivo-Comportamental
+          </div>
+          <div class="expertise-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Especialista em Psicopatologia
+          </div>
+          <div class="expertise-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Especialista em Gestão em Pessoas
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">O que Dizem Sobre Mim</h2>
+    <div class="carousel-outer">
+      <div class="carousel-track">
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg, #d4a574 0%, #c89968 100%);"></div>
+              <div>
+                <div class="testimonial-name">Janayna do Nascimento</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="testimonial-text">"<span class="testimonial-highlight">Muito boa</span>. Gostei muito do atendimento!"</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg, #c89968 0%, #b89968 100%);"></div>
+              <div>
+                <div class="testimonial-name">Dayse Alexia</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="testimonial-text">"Cristiane me acompanhou por pouco mais de 3 anos, e ela foi <span class="testimonial-highlight">fundamental</span> para que eu pudesse evoluir em muitos processos. Muito gentil, <span class="testimonial-highlight">empática</span>, sempre atualizada e trazendo <span class="testimonial-highlight">ferramentas novas</span>. Super recomendo!"</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg, #9b8563 0%, #8b7553 100%);"></div>
+              <div>
+                <div class="testimonial-name">Ieda Rodrigues</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="testimonial-text">"<span class="testimonial-highlight">Fiz acompanhamento</span> com a Cristiane durante um <span class="testimonial-highlight">ano e meio</span>. Período de descobertas e <span class="testimonial-highlight">autoconhecimento</span> que mudaram totalmente meu jeito de agir/reagir. Construímos uma relação de <span class="testimonial-highlight">muita confiança</span>. Foi a melhor terapeuta que já tive! ❤️"</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg, #d4a574 0%, #c89968 100%);"></div>
+              <div>
+                <div class="testimonial-name">Janayna do Nascimento</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="testimonial-text">"<span class="testimonial-highlight">Muito boa</span>. Gostei muito do atendimento!"</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg, #c89968 0%, #b89968 100%);"></div>
+              <div>
+                <div class="testimonial-name">Dayse Alexia</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="testimonial-text">"Cristiane me acompanhou por pouco mais de 3 anos, e ela foi <span class="testimonial-highlight">fundamental</span> para que eu pudesse evoluir. Muito gentil, <span class="testimonial-highlight">empática</span>, sempre atualizada trazendo <span class="testimonial-highlight">ferramentas novas</span>!"</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="testimonial-avatar" style="background: linear-gradient(135deg, #9b8563 0%, #8b7553 100%);"></div>
+              <div>
+                <div class="testimonial-name">Ieda Rodrigues</div>
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="testimonial-text">"A melhor terapeuta que já tive! Período de <span class="testimonial-highlight">autoconhecimento</span> que mudou totalmente meu jeito de pensar. <span class="testimonial-highlight">Muita confiança</span> e <span class="testimonial-highlight">acolhimento</span>. ❤️"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section" id="localizacao">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom: 40px;">Localização</h2>
+    <div class="map-content">
+      <div class="map-info">
+        <h3>Atendimento presencial</h3>
+        <p>Estou localizada em um espaço aconchegante e profissional, preparado para receber você com conforto e privacidade.</p>
+        <p><strong>Endereço:</strong><br>Rua Marechal Rondon, 317 - Planalto<br>Belo Horizonte - MG, 31720-050</p>
+        <button class="btn btn-primary" style="margin-top: 20px;" onclick="window.open('https://maps.google.com/?q=Rua+Marechal+Rondon,+317+-+Planalto,+Belo+Horizonte+-+MG,+31720-050', '_blank')">Ver Localização no Google Maps</button>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.4234567890!2d-43.9575613!3d-19.8277538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa68f567d4206a5%3A0x7d743d7aa36efe99!2sRua%20Marechal%20Rondon%2C%20317%20-%20Planalto%2C%20Belo%20Horizonte%20-%20MG%2031720-050!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" id="contato">
+  <h2>Pronto para Começar Sua Transformação?</h2>
+  <p>Dê o primeiro passo em direção a uma vida mais equilibrada, consciente e plena. Estou aqui para te acolher e guiar nessa jornada.</p>
+  <div class="cta-buttons-white">
+    <button class="btn-white" onclick="openCalendar()">Agendar Consulta</button>
+    <a href="https://wa.me/5531997870726" class="btn-white" style="text-decoration: none;">Conversar no WhatsApp</a>
+  </div>
+</section>
+
+<!-- Calendar Modal -->
+<div id="calendarModal" class="calendar-modal">
+  <div class="calendar-content">
+    <div class="calendar-header">
+      <h3>Escolha seu Horário</h3>
+      <button class="calendar-close" onclick="closeCalendar()">×</button>
+    </div>
+    
+    <div class="calendar-days">
+      <div class="day-column">
+        <div class="day-label">Hoje</div>
+        <div class="day-date">13 Jun</div>
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="day-label">Amanhã</div>
+        <div class="day-date">14 Jun</div>
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="day-label">Segunda-f...</div>
+        <div class="day-date">15 Jun</div>
+        <div class="time-slot" onclick="selectTime('15 Jun', '07:00')">07:00</div>
+      </div>
+      <div class="day-column">
+        <div class="day-label">Ter,</div>
+        <div class="day-date">16 Jun</div>
+        <div class="time-slot unavailable">-</div>
+      </div>
+    </div>
+
+    <div class="calendar-days">
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot" onclick="selectTime('15 Jun', '08:00')">08:00</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+    </div>
+
+    <div class="calendar-days">
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot" onclick="selectTime('15 Jun', '09:00')">09:00</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+    </div>
+
+    <div class="calendar-days">
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot" onclick="selectTime('15 Jun', '10:00')">10:00</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+    </div>
+
+    <div class="calendar-days">
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot" onclick="selectTime('15 Jun', '11:00')">11:00</div>
+      </div>
+      <div class="day-column">
+        <div class="time-slot unavailable">-</div>
+      </div>
+    </div>
+
+    <div style="text-align: center; color: #6B9D5C; font-weight: 600; margin: 20px 0; cursor: pointer;" onclick="toggleMoreTimes()">menos ⌃</div>
+
+    <div class="calendar-actions">
+      <button class="btn-cancel" onclick="closeCalendar()">Cancelar</button>
+      <button class="btn btn-primary" onclick="confirmSchedule()">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div>
+      <h3>Atendimento</h3>
+      <p>Consultas presenciais e online<br>
+      Agende seu horário conforme sua disponibilidade<br>
+      Primeira consulta: avaliação completa</p>
+    </div>
+    <div>
+      <h3>Especialidades</h3>
+      <p>Terapia Cognitivo-Comportamental (TCC)<br>
+      Psicologia Clínica<br>
+      Atendimento de Adolescentes<br>
+      Treinamento Parental</p>
+    </div>
+    <div>
+      <h3>Contato</h3>
+      <p><a href="https://wa.me/5531997870726">WhatsApp: (31) 99787-0726</a></p>
+      <p style="margin-top: 16px; font-size: 12px; color: #999;">Rua Marechal Rondon, 317 - Planalto<br>Belo Horizonte - MG, 31720-050</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+let selectedTime = null;
+
+function openCalendar() {
+  document.getElementById('calendarModal').classList.add('active');
+}
+
+function closeCalendar() {
+  document.getElementById('calendarModal').classList.remove('active');
+  selectedTime = null;
+}
+
+function selectTime(date, time) {
+  selectedTime = { date, time };
+  // Highlight selected time
+  document.querySelectorAll('.time-slot').forEach(slot => {
+    slot.style.background = '#C8E6A0';
+    slot.style.color = '#6B9D5C';
+  });
+  event.target.style.background = '#6B9D5C';
+  event.target.style.color = 'white';
+}
+
+function toggleMoreTimes() {
+  const text = event.target;
+  if (text.textContent.includes('menos')) {
+    text.textContent = 'mais ⌄';
+  } else {
+    text.textContent = 'menos ⌃';
+  }
+}
+
+function confirmSchedule() {
+  if (!selectedTime) {
+    alert('Por favor, selecione um horário');
+    return;
+  }
+  alert(`Agendamento solicitado para ${selectedTime.date} às ${selectedTime.time}.\n\nEntraremos em contato para confirmar!`);
+  closeCalendar();
+  // Here you would send the data to your backend
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+  const modal = document.getElementById('calendarModal');
+  if (event.target === modal) {
+    closeCalendar();
+  }
+});
+</script>
+
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
